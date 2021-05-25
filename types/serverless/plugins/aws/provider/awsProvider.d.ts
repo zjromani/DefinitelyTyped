@@ -169,7 +169,12 @@ declare namespace Aws {
     }
 
     interface Authorizers {
-        [key: string]: CognitoAuthorizer | OidcAuthorizer | JwtAuthorizer;
+        [key: string]: CognitoAuthorizer | OidcAuthorizer | JwtAuthorizer | RequestAuthorizer;
+    }
+
+    interface RequestAuthorizer {
+        type: 'request';
+        functionName: string;
     }
 
     interface Alb {
